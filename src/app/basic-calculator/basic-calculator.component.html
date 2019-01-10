@@ -1,0 +1,77 @@
+<div class="container">
+  <h1>Basic Calculator</h1>
+  <div id="calculator">
+    <div id="display" class="col-md-12">
+      <textarea style="width: 100%; resize: none" rows="15" readonly>{{display}}</textarea>
+    </div>
+    <div id="keypad" class="col-md-12">
+      <div class="row">
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-secondary op" (click)="inputOperator('clear')">{{clearBtn}}</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-secondary op" (click)="inputOperator('-1')">&#177;</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-secondary op" (click)="inputOperator('%')">&#37;</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-info op" (click)="inputOperator('/')">&#247;</button>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(7)">7</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(8)">8</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(9)">9</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-info op" (click)="inputOperator('*')">&#215;</button>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(4)">4</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(5)">5</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(6)">6</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-info op" (click)="inputOperator('-')">&#8722;</button>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(1)">1</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(2)">2</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(3)">3</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-info op" (click)="inputOperator('+')">&#43;</button>
+        </span>
+      </div>
+      <div class="row">
+        <span class="col-md-6">
+          <button type="button" class="btn btn-lg btn-dark num" (click)="inputNumber(0)">0</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-secondary op" (click)="inputOperator('.')">&#8901;</button>
+        </span>
+        <span class="col-md-3">
+          <button type="button" class="btn btn-lg btn-warning op" (click)="inputOperator('=')">&#61;</button>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
