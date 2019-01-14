@@ -1,7 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'basic-calculator', component: BasicCalculatorComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

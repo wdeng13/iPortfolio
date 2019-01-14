@@ -7,229 +7,158 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasicCalculatorComponent implements OnInit {
 
-  clearBtn = '';
-  result = 0;
-  display = '';
-  input = '0';
-  numList = [];
-  mathOpList = [];
-  lastInputType = '';
-  mathOpRank = {
-    '+': 2,
-    '-': 2,
-    '*': 1,
-    '/': 1
-  }
+  clearBtn = 'AC';
+  displayValue = '0';
+  lastKeyPressed = '';
+  operator = '';
+
+  plusIsActive = false;
+  minusIsActive = false;
+  timesIsActive = false;
+  divideIsActive = false;
+
+  num1 = 0;
+  num2 = 0;
 
   constructor() { }
 
   ngOnInit() {
-    this.clearBtn = 'AC';
-    this.display = this.result.toString();
+
   }
 
-  inputNumber(num: number) {
+  inputNumber(num: string) {
+    this.opToInactive();
     this.clearBtn = 'C';
-    if (this.input === '0') {
-      this.input = num.toString();
-      this.display = num.toString();
+    if (this.displayValue === '0' || this.lastKeyPressed === 'op' || this.lastKeyPressed === '=') {
+      if (this.lastKeyPressed === '=') {
+        this.num1 = 0;
+      }
+      this.displayValue = num;
     } else {
-      this.input += num.toString();
-      this.display += num.toString();
+      this.displayValue += num;
     }
-    this.lastInputType = 'num';
+    this.lastKeyPressed = 'num';
   }
 
   inputOperator(op: string) {
+    this.opToInactive();
     switch (op) {
-      case '=': {
-        this.numList.push(this.input);
-        this.input = '0';
-        let num2 = this.numList.pop();
-        let num1 = this.numList.pop();
-        let mathOp = this.mathOpList.pop();
-        this.result = this.calculate(num1, num2, mathOp);
-        this.display = this.result.toString();
-        this.numList = [];
-        this.mathOpList = [];
-        break;
-      }
-      case '%': {
-        this.input = (Number(this.input) / 100).toString();
-        this.display = this.input;
-        break;
-      }
-      case '-1': {
-        this.input = (Number(this.input) * -1).toString();
-        this.display = this.input;
-        break;
-      }
-      case '.': {
-        if (!this.input.includes(op)) {
-          if (!this.input) {
-            this.input = '0' + op;
-            this.display = this.input;
-          } else {
-            this.input += op;
-            this.display = this.input;
-          }
-        }
-        break;
-      }
-      case 'clear': {
-        if (this.clearBtn === 'C') {
-          this.clearBtn = 'AC';
-          this.display = '0';
-          this.input = '0';
-        } else {
-          this.display = '0';
-          this.input = '0';
-          this.numList = [];
-          this.mathOpList = [];
-          this.result = 0;
-        }
-        break;
-      }
       case '+': {
-        if (this.lastInputType === 'num') {
-          this.numList.push(this.input);
-          console.log('Input:', this.input);
-          console.log('Num List:', this.numList);
-          this.input = '0';
-          if (this.mathOpList.length > 0) {
-            if (this.mathOpRank[this.mathOpList[this.mathOpList.length - 1]] === this.mathOpRank[op]) {
-              let num2 = this.numList.pop();
-              let num1 = this.numList.pop();
-              let mathOp = this.mathOpList.pop();
-              this.result = this.calculate(num1, num2, mathOp);
-              console.log('Result:', this.result);
-              this.display = this.result.toString();
-              this.numList.push(this.result.toString());
-            }
-          }
-          this.mathOpList.push(op);
-        }
-        if (this.lastInputType === 'mathOp') {
-          this.mathOpList[this.mathOpList.length - 1] = op;
-        }
-        this.lastInputType = 'mathOp';
-        console.log('Math Op List:', this.mathOpList);
-        console.log('\n');
+        this.plusIsActive = true;
         break;
       }
       case '-': {
-        if (this.lastInputType === 'num') {
-          this.numList.push(this.input);
-          console.log('Input:', this.input);
-          console.log('Num List:', this.numList);
-          this.input = '0';
-          if (this.mathOpList.length > 0) {
-            if (this.mathOpRank[this.mathOpList[this.mathOpList.length - 1]] === this.mathOpRank[op]) {
-              let num2 = this.numList.pop();
-              let num1 = this.numList.pop();
-              let mathOp = this.mathOpList.pop();
-              this.result = this.calculate(num1, num2, mathOp);
-              console.log('Result:', this.result);
-              this.display = this.result.toString();
-              this.numList.push(this.result.toString());
-            }
-          }
-          this.mathOpList.push(op);
-        }
-        if (this.lastInputType === 'mathOp') {
-          this.mathOpList[this.mathOpList.length - 1] = op;
-        }
-        this.lastInputType = 'mathOp';
-        console.log('Math Op List:', this.mathOpList);
-        console.log('\n');
+        this.minusIsActive = true;
         break;
       }
       case '*': {
-        if (this.lastInputType === 'num') {
-          this.numList.push(this.input);
-          console.log('Input:', this.input);
-          console.log('Num List:', this.numList);
-          this.input = '0';
-          if (this.mathOpList.length > 0) {
-            if (this.mathOpRank[this.mathOpList[this.mathOpList.length - 1]] === this.mathOpRank[op]) {
-              let num2 = this.numList.pop();
-              let num1 = this.numList.pop();
-              let mathOp = this.mathOpList.pop();
-              this.result = this.calculate(num1, num2, mathOp);
-              console.log('Result:', this.result);
-              this.display = this.result.toString();
-              this.numList.push(this.result.toString());
-            }
-          }
-          this.mathOpList.push(op);
-        }
-        if (this.lastInputType === 'mathOp') {
-          this.mathOpList[this.mathOpList.length - 1] = op;
-        }
-        this.lastInputType = 'mathOp';
-        console.log('Math Op List:', this.mathOpList);
-        console.log('\n');
+        this.timesIsActive = true;
         break;
       }
       case '/': {
-        if (this.lastInputType === 'num') {
-          this.numList.push(this.input);
-          console.log('Input:', this.input);
-          console.log('Num List:', this.numList);
-          this.input = '0';
-          if (this.mathOpList.length > 0) {
-            if (this.mathOpRank[this.mathOpList[this.mathOpList.length - 1]] === this.mathOpRank[op]) {
-              let num2 = this.numList.pop();
-              let num1 = this.numList.pop();
-              let mathOp = this.mathOpList.pop();
-              this.result = this.calculate(num1, num2, mathOp);
-              console.log('Result:', this.result);
-              this.display = this.result.toString();
-              this.numList.push(this.result.toString());
-            }
-          }
-          this.mathOpList.push(op);
-        }
-        if (this.lastInputType === 'mathOp') {
-          this.mathOpList[this.mathOpList.length - 1] = op;
-        }
-        this.lastInputType = 'mathOp';
-        console.log('Math Op List:', this.mathOpList);
-        console.log('\n');
+        this.divideIsActive = true;
         break;
       }
-      // default: {
-      //   if (this.lastInputType === 'num') {
-      //     this.numList.push(this.input);
-      //     this.input = '';
-      //     this.opList.push(op);
-      //   }
-      //   if (this.lastInputType === 'mathOp') {
-      //     this.opList[this.opList.length - 1] = op;
-      //   }
-      //   this.lastInputType = 'mathOp';
-      //   break;
-      // }
+      case '=': {
+        if (this.operator) {
+          if (this.lastKeyPressed === '=') {
+            this.num1 = Number(this.displayValue);
+          } else {
+            this.num2 = Number(this.displayValue);
+          }
+          console.log(this.num1, this.operator, this.num2);
+          this.displayValue = this.calculate(this.num1, this.operator, this.num2);
+        }
+        break;
+      }
+    }
+    if (op === '=') {
+      this.lastKeyPressed = '=';
+    } else {
+      if (this.num1 && this.operator && this.lastKeyPressed !== 'op' && this.lastKeyPressed !== '=') {
+        this.num2 = Number(this.displayValue);
+        console.log(this.num1, this.operator, this.num2);
+        this.displayValue = this.calculate(this.num1, this.operator, this.num2);
+      }
+      this.num1 = Number(this.displayValue);
+      this.operator = op;
+      this.lastKeyPressed = 'op';
     }
   }
 
-  calculate(num1: string, num2: string, mathOp: string) {
-    switch (mathOp) {
+  calculate(num1: number, op: string, num2: number) {
+    switch (op) {
       case '+': {
-        return Number(num1) + Number(num2);
+        return (num1 + num2).toString();
       }
       case '-': {
-        return Number(num1) - Number(num2);
+        return (num1 - num2).toString();
       }
       case '*': {
-        return Number(num1) * Number(num2);
+        return (num1 * num2).toString();
       }
       case '/': {
-        return Number(num1) / Number(num2);
+        if (num2 === 0) {
+          console.log('Dividing by zero is not allowed!');
+          return 'Error';
+        }
+        return (num1 / num2).toString();
       }
-      // default: {
-      //   return 0;
-      // }
+      default: {
+        console.log('Error:', num1, op, num2);
+        return 'Error';
+      }
     }
+  }
+
+  clearDisplay() {
+    this.opToInactive();
+    this.displayValue = '0';
+    if (this.clearBtn === 'C') {
+      this.clearBtn = 'AC';
+      if (this.lastKeyPressed === '=') {
+        this.num1 = 0;
+      }
+    } else if (this.clearBtn === 'AC') {
+      this.num1 = 0;
+      this.num2 = 0;
+      this.operator = '';
+    }
+    this.lastKeyPressed = 'clear';
+  }
+
+  toNegative() {
+    this.opToInactive();
+    this.clearBtn = 'C';
+    this.displayValue = (Number(this.displayValue) * -1).toString();
+    this.lastKeyPressed = 'negative';
+  }
+
+  toPercent() {
+    this.opToInactive();
+    this.clearBtn = 'C';
+    this.displayValue = (Number(this.displayValue) / 100).toString();
+    this.lastKeyPressed = 'percent';
+  }
+
+  toDecimal() {
+    this.opToInactive();
+    this.clearBtn = 'C';
+    if (this.lastKeyPressed === 'op' || this.lastKeyPressed === '=') {
+      this.displayValue = '0.';
+      if (this.lastKeyPressed === '=') {
+        this.num1 = 0;
+      }
+    } else if (!this.displayValue.includes('.')) {
+      this.displayValue += '.';
+    }
+    this.lastKeyPressed = 'decimal';
+  }
+
+  opToInactive() {
+    this.plusIsActive = false;
+    this.minusIsActive = false;
+    this.timesIsActive = false;
+    this.divideIsActive = false;
   }
 }
