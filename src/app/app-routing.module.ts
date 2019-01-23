@@ -1,10 +1,14 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
+import { HomePageComponent } from './home-page/home-page.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes: Routes = [
-  { path: '', component: BasicCalculatorComponent },
-  { path: 'basic-calculator', component: BasicCalculatorComponent }
+  { path: 'home', component: HomePageComponent },
+  { path: 'basic-calculator', component: BasicCalculatorComponent },
+  { path: '',   redirectTo: '/home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent }
 ];
 
 @NgModule({
