@@ -4,7 +4,7 @@ import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.co
 
 const routes: Routes = [
   { path: 'basic-calculator', component: BasicCalculatorComponent },
-  { path: '', redirectTo: 'basic-calculator', pathMatch: 'full' },
+  { path: 'iPortfolio', redirectTo: 'basic-calculator', pathMatch: 'full' },
   { path: '**', redirectTo: 'basic-calculator', pathMatch: 'full' }
 ];
 
