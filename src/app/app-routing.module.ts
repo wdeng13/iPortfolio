@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
 
 const routes: Routes = [
-  { path: '', component: BasicCalculatorComponent },
+  { path: 'iPortfolio', component: BasicCalculatorComponent },
   { path: 'basic-calculator', component: BasicCalculatorComponent }
 ];
 
