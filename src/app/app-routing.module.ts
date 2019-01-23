@@ -3,8 +3,9 @@ import { Routes, RouterModule } from '@angular/router';
 import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
 
 const routes: Routes = [
-  { path: 'iPortfolio', component: BasicCalculatorComponent },
-  { path: 'basic-calculator', component: BasicCalculatorComponent }
+  { path: 'basic-calculator', component: BasicCalculatorComponent },
+  { path: '', redirectTo: 'basic-calculator', pathMatch: 'full' },
+  { path: '**', redirectTo: 'basic-calculator', pathMatch: 'full' }
 ];
 
 @NgModule({
