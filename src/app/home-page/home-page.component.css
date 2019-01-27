@@ -1,6 +1,6 @@
 /* Navbar */
 .navbar {
-    font-size: 1.5rem;
+    font-size: 1.5em;
 }
 
 .navbar-brand {
@@ -24,7 +24,7 @@ img {
 }
 
 .name {
-    font-size: 2rem;
+    font-size: 2em;
     display: table-cell;
     vertical-align: middle;
     font-weight: bold;
@@ -32,11 +32,22 @@ img {
 
 /* About Me */
 #aboutMe {
-    height: 500px;
+    /* height: 500px; */
 }
 
 #aboutMe .col-md-6 {
     display: inline-block;
+}
+
+#aboutMe a {
+    margin: 10px;
+}
+
+#aboutMe img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 #portrait {
@@ -48,19 +59,16 @@ img {
     padding: 0;
     width: 300px;
     height: auto;
-    margin: 50px 10%;
-
+    margin: 2em auto;
 }
 
 #description {
-    margin: 50px 10%;
+    margin: 2em auto;
 }
 
 /* Education */
 #education {
-    height: 720px;
-    background-image: url(../../assets/image/asu1.jpg);
-    background-size: inherit;
+
 }
 
 /* Experience */
