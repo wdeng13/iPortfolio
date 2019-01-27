@@ -68,12 +68,65 @@ img {
 
 /* Education */
 #education {
+    position: relative;
+}
 
+#education #asuDescription img {
+    height: 100px;
+    width: auto
+}
+
+#degree {
+    margin: 10px 30px;
+}
+
+#asuDescription {
+    height: 500px;
+    width: 800px;
+    z-index: 5;
+    display: inline;
+    background-color: white;
+    position: absolute;
+    opacity: 0.9;
+    border-radius: 20px;
+    margin: 20px calc((100% - 800px) / 2);
+}
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+#asuDescription h2 {
+    color: #f7cd4b;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #92284e;
+}
+
+#asuDescription h2:hover {
+    color: #92284e;
+}
+
+a {
+    text-decoration: none;
+}
+
+#degree h4 {
+    color: gray;
+}
+
+#degree h4:hover {
+    color: #92284e;
+}
+
+.fas {
+    margin-right: 5px;
 }
 
 /* Experience */
 #experience {
-    height: 800px;
+    height: 500px;
 }
 
 /* Footer */
@@ -96,4 +149,25 @@ footer p a {
 }
 footer p a:hover {
   color: #fff;
+}
+
+.backToTop {
+    background-color: #3C3D41;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    line-height: 47px;
+    position: fixed;
+    bottom: -100px;
+    border-radius: 3px;
+    right: 20px;
+    text-align: center;
+    font-size: 28px;
+    color: #ffffff !important;
+    cursor: pointer;
+    -webkit-transition: all .7s ease-in-out;
+    -moz-transition: all .7s ease-in-out;
+    -o-transition: all .7s ease-in-out;
+    -ms-transition: all .7s ease-in-out;
+    transition: all .7s ease-in-out;
 }
