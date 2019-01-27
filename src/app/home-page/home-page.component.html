@@ -1,6 +1,6 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="top">
   <div class="container">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="#top">
       <div class="navbar-pic">
         <img src="../../assets/images/p2.JPG">
       </div>
@@ -14,13 +14,13 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="home#aboutMe">About Me<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="#aboutMe">About Me<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="home#education">Education</a>
+          <a class="nav-link" href="#education">Education</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="home#experience">Experience</a>
+          <a class="nav-link" href="#experience">Experience</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -35,14 +35,15 @@
     </div>
   </div>
 </nav>
-<div id="aboutMe" class="container">
+<section id="aboutMe" class="section">
+  <div class="container">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-6 animated fadeInLeft">
         <div id="portrait">
           <img src="../../assets/images/p1.JPG">
         </div>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 animated fadeInRight">
         <div id="description">
           <h1>Wenrong Deng</h1>
           <p>Student from Arizona State University, BS Computer Science Software Engineering, Seeking full time
@@ -62,8 +63,9 @@
         </div>
       </div>
     </div>
-</div>
-<div id="education">
+  </div>
+</section>
+<section id="education">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -76,16 +78,21 @@
         <img src="../../assets/images/asu-fb.png" class="d-block w-100">
       </div>
     </div>
-    <!-- <a class="carousel-control-prev" href="#carouselExampleFade" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleFade" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a> -->
   </div>
-</div>
-<div id="experience">
+</section>
+<section id="experience">
 
-</div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="text-center">
+          <p>All Rights Reserved. &copy; 2019 Created By:
+            <a href="#top">Wenrong Deng</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
