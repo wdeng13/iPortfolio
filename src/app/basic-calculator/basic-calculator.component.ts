@@ -19,6 +19,8 @@ export class BasicCalculatorComponent implements OnInit {
 
   num1 = 0;
   num2 = 0;
+  currentDecimalPoint = 0;
+  maxDecimalPoint = 0;
 
   constructor() { }
 
@@ -37,10 +39,17 @@ export class BasicCalculatorComponent implements OnInit {
     } else {
       this.displayValue += num;
     }
+    if (this.displayValue.includes('.')) {
+      this.currentDecimalPoint++;
+    } else {
+      this.currentDecimalPoint = 0;
+    }
     this.lastKeyPressed = 'num';
+    console.log(this.currentDecimalPoint);
   }
 
   inputOperator(op: string) {
+    this.maxDecimalPoint = Math.max(this.maxDecimalPoint, this.currentDecimalPoint);
     this.opToInactive();
     switch (op) {
       case '+': {
@@ -89,10 +98,10 @@ export class BasicCalculatorComponent implements OnInit {
   calculate(num1: number, op: string, num2: number) {
     switch (op) {
       case '+': {
-        return (num1 + num2).toString();
+        return ((num1 * 10 ** this.maxDecimalPoint + num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
       }
       case '-': {
-        return (num1 - num2).toString();
+        return ((num1 * 10 ** this.maxDecimalPoint - num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
       }
       case '*': {
         return (num1 * num2).toString();
