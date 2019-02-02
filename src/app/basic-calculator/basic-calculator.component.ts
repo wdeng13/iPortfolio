@@ -21,6 +21,8 @@ export class BasicCalculatorComponent implements OnInit {
   num2 = 0;
   currentDecimalPoint = 0;
   maxDecimalPoint = 0;
+  currentNumLength = 0;
+  maxNumLength = 9;
 
   constructor() { }
 
@@ -36,8 +38,12 @@ export class BasicCalculatorComponent implements OnInit {
         this.num1 = 0;
       }
       this.displayValue = num;
+      this.currentNumLength = 1;
     } else {
-      this.displayValue += num;
+      if (this.currentNumLength < this.maxNumLength) {
+        this.displayValue += num;
+        this.currentNumLength++;
+      }
     }
     if (this.displayValue.includes('.')) {
       this.currentDecimalPoint++;
@@ -96,28 +102,48 @@ export class BasicCalculatorComponent implements OnInit {
   }
 
   calculate(num1: number, op: string, num2: number) {
+    let result = '';
     switch (op) {
       case '+': {
-        return ((num1 * 10 ** this.maxDecimalPoint + num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
+        result = ((num1 * 10 ** this.maxDecimalPoint + num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
+        result = this.formatResult(result);
+        return result;
       }
       case '-': {
-        return ((num1 * 10 ** this.maxDecimalPoint - num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
+        result = ((num1 * 10 ** this.maxDecimalPoint - num2 * 10 ** this.maxDecimalPoint) / 10 ** this.maxDecimalPoint).toString();
+        result = this.formatResult(result);
+        return result;
       }
       case '*': {
-        return (num1 * num2).toString();
+        result = (num1 * num2).toString();
+        result = this.formatResult(result);
+        return result;
       }
       case '/': {
         if (num2 === 0) {
           console.log('Dividing by zero is not allowed!');
           return 'Error';
         }
-        return (num1 / num2).toString();
+        result = (num1 / num2).toString();
+        result = this.formatResult(result);
+        return result;
       }
       default: {
         console.log('Error:', num1, op, num2);
         return 'Error';
       }
     }
+  }
+
+  formatResult(result: string) {
+    if (Number(result) >= 1000000000) {
+      result = (Number(result).toExponential(5))
+    } else if (Number(result) >= 100000000) {
+      result = (Math.round(Number(result))).toString();
+    } else if (result.includes('.')) {
+      result = result.substr(0, 10);
+    }
+    return result;
   }
 
   clearDisplay() {
@@ -147,6 +173,7 @@ export class BasicCalculatorComponent implements OnInit {
     this.opToInactive();
     this.clearBtn = 'C';
     this.displayValue = (Number(this.displayValue) / 100).toString();
+    this.currentDecimalPoint += 2;
     this.lastKeyPressed = 'percent';
   }
 
