@@ -10,12 +10,13 @@
 .navbar-pic {
     width: 60px;
     height: auto;
-    display: inline-block;
+    display: table-cell inline-block;
     border-radius: 50%;
     border-width: 3px;
     border-style: solid;
     border-color: #d7ecff;
     overflow: hidden;
+    vertical-align: middle;
 }
 
 img {
@@ -27,21 +28,14 @@ img {
     font-size: 2em;
     display: table-cell;
     vertical-align: middle;
-    font-weight: bold;
+    /* font-weight: bold; */
     font-style: italic;
+    font-family: 'Fredoka One', cursive;
 }
 
 /* About Me */
-#aboutMe {
-    /* height: 500px; */
-}
-
 #aboutMe .col-md-6 {
     display: inline-block;
-}
-
-#aboutMe a {
-    margin: 10px;
 }
 
 #aboutMe img {
@@ -58,13 +52,19 @@ img {
     border-color: #d7ecff;
     overflow: hidden;
     padding: 0;
-    width: 300px;
+    width: 350px;
     height: auto;
-    margin: 2em auto;
+    margin: 4em auto;
 }
 
 #description {
-    margin: 2em auto;
+    margin: 4em auto;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    margin: 10px;
 }
 
 /* Education */
