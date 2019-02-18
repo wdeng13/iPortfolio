@@ -61,6 +61,12 @@ img {
     margin: 4em auto;
 }
 
+p {
+    font-size: 1.5em;
+    color: dimgray;
+    font-family: 'Vollkorn', serif;
+}
+
 .icon {
     width: 64px;
     height: 64px;
