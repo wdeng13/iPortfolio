@@ -8,13 +8,23 @@ import { MaterialModule } from './shared-module/material-module';
 import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NavBarComponent } from './nav-bar/nav-bar.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { EducationComponent } from './education/education.component';
+import { ExperienceComponent } from './experience/experience.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BasicCalculatorComponent,
     PageNotFoundComponent,
-    HomePageComponent
+    HomePageComponent,
+    NavBarComponent,
+    AboutMeComponent,
+    EducationComponent,
+    ExperienceComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,

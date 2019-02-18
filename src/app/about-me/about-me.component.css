@@ -1,0 +1,38 @@
+.col-md-6 {
+    display: inline-block;
+}
+
+#portrait img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+#portrait {
+    border-radius: 50%;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #d7ecff;
+    overflow: hidden;
+    padding: 0;
+    width: 350px;
+    height: 350px;
+    margin: 4em auto;
+}
+
+#description {
+    margin: 4em auto;
+}
+
+p {
+    font-size: 1.5em;
+    color: dimgray;
+    font-family: 'Vollkorn', serif;
+}
+
+.icon {
+    width: 64px;
+    height: 64px;
+    margin: 10px;
+}

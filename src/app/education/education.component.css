@@ -1,0 +1,57 @@
+/* Education */
+#asu {
+    position: relative;
+}
+
+#asu #asuDescription img {
+    height: 100px;
+    width: auto
+}
+
+#degree {
+    margin: 10px 30px;
+}
+
+#asuDescription {
+    height: 500px;
+    width: 800px;
+    z-index: 5;
+    display: inline;
+    background-color: white;
+    position: absolute;
+    opacity: 0.9;
+    border-radius: 20px;
+    margin: 20px calc((100% - 800px) / 2);
+}
+
+#course ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+#asuDescription h2 {
+    color: #f7cd4b;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #92284e;
+}
+
+#asuDescription h2:hover {
+    color: #92284e;
+}
+
+a {
+    text-decoration: none;
+}
+
+#degree h4 {
+    color: gray;
+}
+
+#degree h4:hover {
+    color: #92284e;
+}
+
+.fas {
+    margin-right: 5px;
+}
