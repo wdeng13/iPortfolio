@@ -1,72 +1,116 @@
-<div id="asu" class="animated fadeInUp">
-  <div id="asuDescription">
-    <div class="text-center">
-      <a href="https://www.asu.edu/">
-        <img src="../../assets/images/asu-logo.png">
-        <h2>Arizona State University</h2>
-      </a>
-    </div>
-    <mat-tab-group>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <i class="fas fa-info-circle fa-lg"></i>
-          Degree
-        </ng-template>
-        <div id="degree">
-          <a href="https://engineering.asu.edu/">
-            <h4>Ira A. Fulton Schools of Engineering</h4>
-          </a>
-          <div class="row">
-            <div class="col-md-6" style="text-align: left">
-              <p style="font-style: italic">B.S. Computer Science</p>
-            </div>
-            <div class="col-md-6" style="text-align: right">
-              <p>August 2015 - Expected May 2019</p>
-            </div>
-          </div>
-          <p style="margin-left: 40px; display: inline-block">Major GPA: 3.72</p>
-          <p style="margin-left: 40px; display: inline-block">Cumulative GPA: 3.60</p>
-        </div>
-      </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <i class="fas fa-award fa-lg"></i>
-          Honors
-        </ng-template>
-        <div>
-          <ul>
-            <li>Dean’s Award:
-              <br>
-              <i><span style="margin-left: 40px">New American University Scholar</span></i></li>
-            <li>Dean’s List:
-              <br>
-              <i><span style="margin-left: 40px">Spring, Fall 2016, Spring 2017, Spring, Fall 2018</span></i></li>
-          </ul>
-        </div>
-      </mat-tab>
-      <mat-tab>
-        <ng-template mat-tab-label>
-          <i class="fas fa-file-alt fa-lg"></i>
-          Relevant Coursework
-        </ng-template>
-        <div id="course">
-          <ul>
-            <li *ngFor="let course of RELEVANT_COURSEWORK">{{course}}</li>
-          </ul>
-        </div>
-      </mat-tab>
-    </mat-tab-group>
-  </div>
+<div id="wrapper" class="animated fadeInUp">
   <div id="carouselExampleFade" class="carousel slide carousel-fade" data-ride="carousel" data-pause="false">
     <div class="carousel-inner">
+      <div id="education">
+        <h1>Education</h1>
+        <mat-tab-group>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <h3>Undergraduate</h3>
+            </ng-template>
+            <div id="asu">
+              <div class="text-center">
+                <a href="https://www.asu.edu/">
+                  <img src="../../assets/images/asu-logo.png">
+                  <h2 id="asuName">Arizona State University</h2>
+                </a>
+              </div>
+              <mat-tab-group>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <i class="fas fa-info-circle fa-lg"></i>
+                    Degree
+                  </ng-template>
+                  <div id="asuDegree">
+                    <a href="https://engineering.asu.edu/">
+                      <h4>Ira A. Fulton Schools of Engineering</h4>
+                    </a>
+                    <div class="row">
+                      <div class="col-md-6" style="text-align: left">
+                        <p style="font-style: italic">B.S. Computer Science</p>
+                      </div>
+                      <div class="col-md-6" style="text-align: right">
+                        <p>August 2015 - Expected May 2019</p>
+                      </div>
+                    </div>
+                    <p style="margin-left: 40px; display: inline-block">Major GPA: 3.72</p>
+                    <p style="margin-left: 40px; display: inline-block">Cumulative GPA: 3.60</p>
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <i class="fas fa-award fa-lg"></i>
+                    Honors
+                  </ng-template>
+                  <div>
+                    <ul>
+                      <li>Dean’s Award:
+                        <br>
+                        <i><span style="margin-left: 40px">New American University Scholar</span></i></li>
+                      <li>Dean’s List:
+                        <br>
+                        <i><span style="margin-left: 40px">Spring, Fall 2016, Spring 2017, Spring, Fall 2018</span></i></li>
+                    </ul>
+                  </div>
+                </mat-tab>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <i class="fas fa-file-alt fa-lg"></i>
+                    Relevant Coursework
+                  </ng-template>
+                  <div id="course">
+                    <ul>
+                      <li *ngFor="let course of RELEVANT_COURSEWORK">{{course}}</li>
+                    </ul>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-tab>
+          <mat-tab>
+            <ng-template mat-tab-label>
+              <h3>Graduate</h3>
+            </ng-template>
+            <div id="gt">
+              <div class="text-center">
+                <a href="https://www.gatech.edu/">
+                  <img src="../../assets/images/gt-logo.png">
+                  <h2 id="gtName">Georgia Institute of Technology</h2>
+                </a>
+              </div>
+              <mat-tab-group>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <i class="fas fa-info-circle fa-lg"></i>
+                    Degree
+                  </ng-template>
+                  <div id="gtDegree">
+                    <a href="https://www.cc.gatech.edu/">
+                      <h4>Georgia Tech College of Computing</h4>
+                    </a>
+                    <div class="row">
+                      <div class="col-md-6" style="text-align: left">
+                        <p style="font-style: italic">M.S. Computer Science</p>
+                      </div>
+                      <div class="col-md-6" style="text-align: right">
+                        <p>Starting Fall 2019</p>
+                      </div>
+                    </div>
+                  </div>
+                </mat-tab>
+              </mat-tab-group>
+            </div>
+          </mat-tab>
+        </mat-tab-group>
+      </div>
       <div class="carousel-item active">
-        <img src="../../assets/images/asu-pw.jpg" class="d-block w-100">
+        <img src="../../assets/images/asu-pw.jpg" class="d-block">
       </div>
       <div class="carousel-item">
-        <img src="../../assets/images/asu-om.jpg" class="d-block w-100">
+        <img src="../../assets/images/asu-om.jpg" class="d-block">
       </div>
       <div class="carousel-item">
-        <img src="../../assets/images/asu-fb.png" class="d-block w-100">
+        <img src="../../assets/images/asu-fb.png" class="d-block">
       </div>
     </div>
   </div>
