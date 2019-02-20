@@ -15,6 +15,7 @@ import { ExperienceComponent } from './experience/experience.component';
 import { FooterComponent } from './footer/footer.component';
 import { TravelingPlaylistComponent } from './traveling-playlist/traveling-playlist.component';
 import { ActivityComponent } from './activity/activity.component';
+import { SkillComponent } from './skill/skill.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { ActivityComponent } from './activity/activity.component';
     ExperienceComponent,
     FooterComponent,
     TravelingPlaylistComponent,
-    ActivityComponent
+    ActivityComponent,
+    SkillComponent
   ],
   imports: [
     BrowserModule,

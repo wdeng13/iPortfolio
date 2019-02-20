@@ -1,0 +1,15 @@
+.skill {
+    font-family: 'Vollkorn', serif;
+    margin: 0 5%;
+}
+
+.progressBar {
+    margin-top: 16px;
+}
+
+@media screen and (max-width: 767px) {
+/* start of medium tablet styles */
+    .progressBar {
+        margin: 0;
+    }
+}

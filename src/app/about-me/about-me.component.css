@@ -9,6 +9,10 @@
     overflow: hidden;
 }
 
+h1 {
+    margin: 10px 0;
+}
+
 #portrait {
     border-radius: 50%;
     border-width: 5px;
@@ -22,7 +26,7 @@
 }
 
 #description {
-    margin: 4em auto;
+    margin: 10px auto;
 }
 
 p {

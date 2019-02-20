@@ -1,0 +1,19 @@
+.workplace {
+    font-family: 'Vollkorn', serif;
+}
+
+.workplaceTitle {
+    margin-bottom: 10px;
+}
+
+.workplaceImg {
+    width: 250px;
+}
+
+.detail {
+    margin: 0 5%;
+}
+
+.projects, .projectDetail {
+    padding-left: 40px;
+}

@@ -32,3 +32,10 @@ img {
     font-style: italic;
     font-family: 'Fredoka One', cursive;
 }
+
+@media screen and (max-width: 479px) {
+    /* start of phone styles */
+        .name {
+            font-size: 1.25em;
+        }
+    }
