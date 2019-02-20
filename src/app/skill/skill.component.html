@@ -2,19 +2,19 @@
   <h1>Skills</h1>
   <div class="animated fadeInUp skill">
     <div class="row techSkills" *ngFor="let ts of TECHNICAL_SKILLS">
-      <div class="col-md-3">
-        <h4>{{ts.name}}</h4>
+      <div class="col-md-4">
+        <h5>{{ts.name}}</h5>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8">
         <mat-progress-bar class="progressBar" mode="determinate" value="{{ts.level}}"></mat-progress-bar>
       </div>
     </div>
     <hr>
     <div class="row otherSkills" *ngFor="let os of OTHER_SKILLS">
-      <div class="col-md-3">
-        <h4>{{os.name}}</h4>
+      <div class="col-md-4">
+        <h5>{{os.name}}</h5>
       </div>
-      <div class="col-md-9">
+      <div class="col-md-8">
         <mat-progress-bar class="progressBar" mode="determinate" value="{{os.level}}"></mat-progress-bar>
       </div>
     </div>
