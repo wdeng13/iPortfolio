@@ -16,6 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { TravelingPlaylistComponent } from './traveling-playlist/traveling-playlist.component';
 import { ActivityComponent } from './activity/activity.component';
 import { SkillComponent } from './skill/skill.component';
+import { SummaryComponent } from './summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { SkillComponent } from './skill/skill.component';
     FooterComponent,
     TravelingPlaylistComponent,
     ActivityComponent,
-    SkillComponent
+    SkillComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

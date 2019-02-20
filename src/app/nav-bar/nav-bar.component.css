@@ -1,6 +1,7 @@
 /* Navbar */
 .navbar {
-    font-size: 1.5em;
+    font-size: 1.25em;
+    padding: 3px 0;
 }
 
 .navbar-brand {
@@ -33,9 +34,15 @@ img {
     font-family: 'Fredoka One', cursive;
 }
 
-@media screen and (max-width: 479px) {
-    /* start of phone styles */
+@media screen and (max-width: 991px) {
+    /* start of large tablet styles */
         .name {
             font-size: 1.25em;
+        }
+        .nav-item {
+            margin-left: 20px;
+        }
+        .navbar {
+            padding: 0 5px;
         }
     }

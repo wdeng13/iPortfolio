@@ -1,0 +1,22 @@
+.wrapper {
+    height: 200px;
+    font-family: serif;
+    background-color: #f3fafe;
+}
+
+.container {
+    padding-top: 50px;
+}
+
+#message {
+    font-size: 36px;
+    font-style: italic;
+    font-weight: bold;
+}
+
+.icon {
+    height: 36px;
+    width: 36px;
+    border-radius: 5px;
+    margin: 0 10px;
+}
