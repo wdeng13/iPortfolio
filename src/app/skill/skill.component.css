@@ -7,6 +7,35 @@
     margin-top: 14px;
 }
 
+h1 {
+    overflow: hidden;
+    text-align: center;
+    font-style: italic;
+    font-family: 'Fredoka One', cursive;
+    color: gray;
+    margin: 50px 0;
+}
+
+h1:before, h1:after {
+    background-color: gray;
+    content: "";
+    display: inline-block;
+    height: 2px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+
+h1:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+
+h1:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
 @media screen and (max-width: 767px) {
 /* start of medium tablet styles */
     .progressBar {

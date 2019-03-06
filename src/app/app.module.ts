@@ -1,10 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import { MaterialModule } from './shared-module/material-module';
+
 import { BasicCalculatorComponent } from './basic-calculator/basic-calculator.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -17,6 +20,8 @@ import { TravelingPlaylistComponent } from './traveling-playlist/traveling-playl
 import { ActivityComponent } from './activity/activity.component';
 import { SkillComponent } from './skill/skill.component';
 import { SummaryComponent } from './summary/summary.component';
+import { AgmCoreModule } from '@agm/core';
+import { config } from './config';
 
 @NgModule({
   declarations: [
@@ -38,7 +43,11 @@ import { SummaryComponent } from './summary/summary.component';
     BrowserModule,
     BrowserAnimationsModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    HttpClientModule,
+    AgmCoreModule.forRoot({
+      apiKey: config.GOOGLE_API_KEY
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]

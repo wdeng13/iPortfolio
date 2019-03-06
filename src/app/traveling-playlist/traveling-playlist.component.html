@@ -1,7 +1,13 @@
-<div class="container text-center" style="height: 100vh">
+<!-- <div class="container text-center" style="height: 100vh">
   <div style="margin: 0 25%; width: 50%; padding-top: 20%">
     <h2>Traveling Playlist</h2>
     <p>This is a project I am currently working on; it utilizes Google Maps API and Spotify API to create a music
       playlist that has a length matching the traveling time.</p>
   </div>
-</div>
+</div> -->
+
+<!-- this creates a google map on the page with the given lat/lng from -->
+<!-- the component as the initial center of the map: -->
+<agm-map [latitude]="default_lat" [longitude]="default_lng" (mapClick)="mapClicked($event)" [zoom]="15">
+  <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+</agm-map>
