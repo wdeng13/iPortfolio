@@ -1,5 +1,5 @@
 agm-map {
-    height: 500px;
+    height: calc(100vh - 132px);
 }
 
 h1 {
@@ -29,4 +29,13 @@ h1:before {
 h1:after {
     left: 0.5em;
     margin-right: -50%;
+}
+
+#message {
+    z-index: 10;
+    position: absolute;
+    background-color: aliceblue;
+    border-radius: 10px;
+    width: 500px;
+    max-width: 100%;
 }
